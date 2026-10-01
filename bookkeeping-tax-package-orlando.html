@@ -336,6 +336,7 @@
 /* Footer action target-size repair; preserve every existing action. */
 footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],footer .footer-col > a[href^="https://calendly.com/"]{min-height:24px}
 </style>
+<script src="/assets/bv-attr.js" defer></script>
 </head>
 
 <body>
@@ -875,10 +876,10 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
         f.addEventListener('submit', function () {
             try {
                 var d = new FormData(f);
-                snap = {
+                var bv = {}; try { bv = (window.bvAttr && window.bvAttr()) || {}; } catch (e) {} snap = {
                     name: d.get('name') || '', phone: d.get('phone') || '',
                     email: d.get('email') || '', message: d.get('message') || '',
-                    subject: d.get('subject') || '', form: 'hero-lead-form', page: location.href, ft: (window.bvgFT ? window.bvgFT() : '')
+                    subject: d.get('subject') || '', form: 'hero-lead-form', page: location.href, ft: (window.bvgFT ? window.bvgFT() : ''), bv_channel: bv.bv_channel || '', bv_landing: bv.bv_landing || '', bv_evidence: bv.bv_evidence || ''
                 };
             } catch (e) {}
         }, true);

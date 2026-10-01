@@ -41,6 +41,18 @@ async function readRaw(req) {
 const str = (v, max) =>
   String(v == null ? '' : v).replace(/[\u0000-\u001f\u007f]+/g, ' ').trim().slice(0, max);
 
+// First-touch attribution from /assets/bv-attr.js. Same rules as the phone-click collector:
+// channel /^[a-z_]{2,20}$/, landing = a same-site path (starts with '/', not '//', no '..', <=200),
+// evidence <=80. All three are returned ONLY when the channel is valid; otherwise nothing, so a
+// missing field reads as "source not recorded", never a guess.
+function bvAttr(p) {
+  const ch = str(p.bv_channel, 20);
+  if (!/^[a-z_]{2,20}$/.test(ch)) return {};
+  let land = str(p.bv_landing, 200);
+  if (land && (land[0] !== '/' || land.startsWith('//') || land.includes('..'))) land = '';
+  return { bv_channel: ch, bv_landing: land, bv_evidence: str(p.bv_evidence, 80) };
+}
+
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
     res.setHeader('Allow', 'POST');
@@ -73,6 +85,9 @@ module.exports = async function handler(req, res) {
     // FIRST page view. Without it a lead that landed on an ad and submitted elsewhere reads as
     // organic, which is exactly what made the ChatGPT ads unmeasurable. Added 2026-08-25.
     ft: str(payload.ft, 500),
+    // bv-attr.js first touch (Bloomview kit v1, 2026-10-01): window.bvAttr() fields captured at
+    // submit. Validated here; forwarded only when the channel is valid (collector re-validates).
+    ...bvAttr(payload),
     ip: str(Array.isArray(fwd) ? fwd[0] : (fwd || '').split(',')[0], 60),
   };
 

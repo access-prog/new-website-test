@@ -161,8 +161,31 @@
             <picture style="display:block"><source type="image/webp" srcset="images/logo_header_440.webp"><img width="440" height="142" src="images/logo_header_440.webp" alt="Shea Business Solutions QuickBooks ProAdvisor Orlando FL" loading="eager" fetchpriority="high"></picture>
         </a>
         <ul class="nav-links">
-            <li><a href="https://www.sheabusinesssolutions.com/services.html">Services</a></li>
-            <li><a href="https://www.sheabusinesssolutions.com/service-areas.html">Service Areas</a></li>
+            <li>
+                <a href="https://www.sheabusinesssolutions.com/services.html" aria-haspopup="true">Services <span class="nav-caret"></span></a>
+                <div class="dropdown">
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/services.html">All services</a>
+                </div>
+            </li>
+            <li>
+                <a href="https://www.sheabusinesssolutions.com/service-areas.html" aria-haspopup="true">Service Areas <span class="nav-caret"></span></a>
+                <div class="dropdown">
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
+                    <a class="dd-link" href="https://www.sheabusinesssolutions.com/service-areas.html">All service areas</a>
+                </div>
+            </li>
             <li><a href="https://www.sheabusinesssolutions.com/#pricing">Pricing</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#process">Process</a></li>
             <li><a href="https://www.sheabusinesssolutions.com/#testimonials">Reviews</a></li>
@@ -184,6 +207,45 @@
             <span></span><span></span><span></span>
         </button>
     </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+            <div class="mm-section">
+                <button class="mm-toggle" onclick="toggleMM(this)">Services <span class="plus">+</span></button>
+                <div class="mm-panel">
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-services-orlando.html">Bookkeeping Services</a>
+<a href="https://www.sheabusinesssolutions.com/quickbooks-training-orlando.html">QuickBooks Training</a>
+<a href="https://www.sheabusinesssolutions.com/quickbooks-proadvisor-orlando.html">QuickBooks ProAdvisor</a>
+<a href="https://www.sheabusinesssolutions.com/payroll-services-orlando.html">Payroll Services</a>
+<a href="https://www.sheabusinesssolutions.com/construction-bookkeeping-orlando.html">Construction Bookkeeping</a>
+<a href="https://www.sheabusinesssolutions.com/flat-rate-bookkeeping-orlando.html">Flat-Rate Bookkeeping</a>
+<a href="https://www.sheabusinesssolutions.com/small-business-tax-prep-orlando.html">Small-Business Tax Prep</a>
+<a href="https://www.sheabusinesssolutions.com/services.html">All services</a>
+</div>
+            </div>
+            <div class="mm-section">
+                <button class="mm-toggle" onclick="toggleMM(this)">Service Areas <span class="plus">+</span></button>
+                <div class="mm-panel">
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-windermere-fl.html">Windermere</a>
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-kissimmee-fl.html">Kissimmee</a>
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-st-cloud-fl.html">St. Cloud</a>
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-lake-nona-fl.html">Lake Nona</a>
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-winter-park-fl.html">Winter Park</a>
+<a href="https://www.sheabusinesssolutions.com/bookkeeping-oviedo-fl.html">Oviedo</a>
+<a href="https://www.sheabusinesssolutions.com/service-areas.html">All service areas</a>
+</div>
+            </div>
+            <a href="https://www.sheabusinesssolutions.com/#pricing" onclick="closeMenu()">Pricing</a>
+            <a href="https://www.sheabusinesssolutions.com/#process" onclick="closeMenu()">Process</a>
+            <a href="https://www.sheabusinesssolutions.com/#testimonials" onclick="closeMenu()">Reviews</a>
+            <a href="https://www.sheabusinesssolutions.com/#about" onclick="closeMenu()">About</a>
+            <a href="https://www.sheabusinesssolutions.com/#faq" onclick="closeMenu()">FAQ</a>
+            <a href="https://www.sheabusinesssolutions.com/#contact" onclick="closeMenu()">Contact</a>
+            <a href="https://www.sheabusinesssolutions.com/Blog/" onclick="closeMenu()">Blog</a>
+            <div class="mm-cta">
+                <a href="https://calendly.com/sheabusinesssolutions/free-60-minute-accounting-consultation" target="_blank" rel="noopener" class="btn btn-primary">Schedule Meeting</a>
+                <a href="tel:+16037598547" style="color:var(--gold);">&#9742; (603) 759-8547</a>
+            </div>
+        </div>
 <main>
     <a data-section="social-proof" class="sbs-proof-strip" href="https://www.google.com/maps?cid=13996863349911463635" target="_blank" rel="noopener nofollow" aria-label="Rated 5.0 from 22 Google reviews - open the Google Business Profile" style="display:block;width:100%;background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.22);padding:.6rem 1rem;text-align:center;text-decoration:none;margin-top:80px"><span style="color:#C9A84C;letter-spacing:2px;font-size:.95rem" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span> <span style="color:var(--off-white);font-size:.9rem;font-weight:700">5.0</span> <span style="color:var(--text-light);font-size:.9rem">from 22 Google reviews</span></a>
 

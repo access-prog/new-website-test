@@ -851,6 +851,29 @@
     })();
     </script>
 <script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script>
+<!-- bvg-ty-redirect-2026-08-25 | Website Checklist v15 row 136: a lead form must land the visitor on the
+     real /thank-you/ URL, never an inline "thanks, we got it" text swap. PURE ADD - the existing inline
+     success handler and every conversion observer bound to .hero-form-success are untouched and fire first
+     (MutationObserver callbacks run as microtasks, ahead of this timer; sendBeacon survives the unload).
+     bvg_lead_pending is deliberately NOT set, so /thank-you/ does not re-fire lead_created / generate_lead /
+     the lead-log beacon for a lead this page already counted. -->
+<script>
+(function () {
+  if (window.__bvgTyRedirect) return; window.__bvgTyRedirect = true;
+  function wire() {
+    var s = document.querySelector('.hero-form-success');
+    if (!s) return;
+    var went = false;
+    new MutationObserver(function () {
+      if (went || s.hidden) return;
+      went = true;
+      setTimeout(function () { window.location.href = '/thank-you/'; }, 600);
+    }).observe(s, { attributes: true, attributeFilter: ['hidden'] });
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', wire);
+  else wire();
+})();
+</script>
 
     <style>.sbs-sticky-cta{display:none}@media (max-width:768px){.sbs-sticky-cta{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;position:fixed;left:0;right:0;bottom:0;z-index:9000;padding:.6rem .75rem calc(.6rem + env(safe-area-inset-bottom));background:var(--charcoal,#1A1A1A);border-top:1px solid var(--border-strong,rgba(201,168,76,.5))}.sbs-sticky-cta a{display:flex;align-items:center;justify-content:center;min-height:48px;border-radius:12px;font-family:'Jost','Jost Fallback',sans-serif;font-weight:600;font-size:.95rem;text-decoration:none}.sbs-sticky-call{background:var(--gold,#C9A84C);color:#1A1A1A}.sbs-sticky-quote{background:transparent;color:var(--gold,#C9A84C);border:1px solid var(--gold,#C9A84C)}body{padding-bottom:76px}.sbs-sticky-cta{animation:sbsStickyIn .28s ease-out both}}@keyframes sbsStickyIn{from{opacity:0}to{opacity:1}}@media (prefers-reduced-motion:reduce){.sbs-sticky-cta{animation:none}}@media print{.sbs-sticky-cta{display:none}}</style>
 

@@ -757,6 +757,10 @@
         /* FADE UP */
         .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
         .fade-up.visible { opacity: 1; transform: none; }
+        /* L5 2026-09-02: reveal failsafes - reduced-motion, print, forced reveal (ADD-only) */
+        .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; }
+        @media (prefers-reduced-motion: reduce) { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1; transform: none; transition: none; animation: none; } }
+        @media print { .fade-up, .fade-up.animate, .fade-up.visible, .fade-up.fu-force { opacity: 1 !important; transform: none !important; transition: none !important; } }
 
         /* MOBILE CALL */
         .mobile-call-cta {
@@ -1093,10 +1097,10 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             </div>
         </div>
     </section>
-    <section data-section="reviews" class="sbs-reviews-band" aria-label="Verified Google review" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.18);padding:2rem 1.5rem">
+    <section data-section="reviews" aria-label="Verified Google review" style="background:var(--charcoal-mid);border-top:1px solid rgba(201,168,76,.18);border-bottom:1px solid rgba(201,168,76,.18);padding:2rem 1.5rem">
       <div style="max-width:850px;margin:0 auto;text-align:center">
         <h2 style="font-size:1.5rem;margin:0 0 .5rem;color:var(--off-white)">What a client says</h2>
-        <p aria-label="5 out of 5 stars" style="color:var(--gold);letter-spacing:.15em;margin:0 0 .75rem">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+        <p role="img" aria-label="5 out of 5 stars" style="color:var(--gold);letter-spacing:.15em;margin:0 0 .75rem">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
         <blockquote style="color:var(--text-light);line-height:1.7;margin:0 0 .6rem">I can’t recommend Shea Business Solutions Bookkeeping &amp; Tax enough! Managing a gym is busy, and my financials had fallen 4 years behind. Ryan tackled the QuickBooks reconstruction seamlessly and completely turned my business finances around. Thanks to his expertise, I finally have accurate reporting and total peace of mind.</blockquote>
         <p style="color:var(--text-muted);margin:0 0 .8rem">Brad Melanson · Verified Google review</p>
         <a href="https://www.google.com/maps?cid=13996863349911463635" target="_blank" rel="noopener nofollow" style="color:var(--gold);font-weight:600">Read all Google reviews</a>
@@ -1219,7 +1223,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
     </main>
 <footer>
         <div class="footer-inner">
-            <div class="footer-brand">
+            <div>
                 <div class="footer-logo">
                     <picture style="display:block"><source type="image/webp" srcset="../images/logo_header_440.webp"><img width="440" height="142" src="../images/logo_header_440.png" alt="Shea Business Solutions logo in the site footer, QuickBooks ProAdvisor in Orlando FL" loading="lazy"></picture>
                 </div>
@@ -1249,6 +1253,7 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
                 <a href="mailto:ryan@sheabusinesssolutions.com">ryan@sheabusinesssolutions.com</a>
                 <a href="https://calendly.com/sheabusinesssolutions/free-60-minute-accounting-consultation" target="_blank" rel="noopener">Schedule a Meeting</a>
                 <p style="margin-top:0.75rem;font-size:0.78rem;">Orlando, FL Area</p>
+                <p style="margin-top:0.5rem;font-size:0.78rem;">Shea Business Solutions Bookkeeping &amp; Tax<br>1809 Great Falls Way<br>Orlando, FL 32824</p>
             </div>
             <div class="footer-col">
                 <h3>Areas we serve</h3>
@@ -1377,5 +1382,9 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
             }, 2000);
         }
 </script>
-<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script></body>
+<script>(function(){var seen={};document.addEventListener('click',function(e){var a=e.target&&e.target.closest&&e.target.closest('a[href^="tel:"]');if(!a)return;var h=a.getAttribute('href')||'',p=h.slice(4),t=(a.textContent||'').trim().slice(0,80);if(typeof gtag==='function'){gtag('event','phone_call',{phone_number:p,link_text:t,page_location:location.href});}var now=Date.now();if(seen[h]&&now-seen[h]<3000)return;seen[h]=now;try{if(navigator.sendBeacon){navigator.sendBeacon('https://bloomviewgrowth.com/collect/phone-click.php',new URLSearchParams({phone:p,text:t,page:location.pathname+location.search}));}}catch(err){}},true);})();</script><script>/* L5 2026-09-02: reveal failsafe - force-reveal every section at 1200ms no matter what */
+setTimeout(function(){try{document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}catch(e){}},1200);
+try{if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.fade-up').forEach(function(el){el.classList.add('visible','fu-force')})}}catch(e){}
+</script>
+</body>
 </html>

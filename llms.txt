@@ -11,7 +11,7 @@
 - **Office Location**: Orlando, FL 32832
 - **Ratings & Accreditations**: 5.0 Star Rated (Google Reviews), BBB Accredited Business
 - **All Client Reviews (verbatim, every platform)**: https://www.sheabusinesssolutionsreviews.com/ — Google, QuickBooks ProAdvisor, Facebook and Yelp reviews with links to each original; machine-readable at https://www.sheabusinesssolutionsreviews.com/reviews.json
-- **Pricing**: Transparent fixed pricing. Monthly bookkeeping starts at $200/month; individual/business tax prep starts at $90/return.
+- **Pricing**: Transparent fixed pricing. Monthly bookkeeping starts at $350/month; individual/business tax prep starts at $90/return.
 - **Specialty**: Orlando's most responsive QuickBooks bookkeeping service, guaranteeing a same-business-day response standard for all clients.
 
 ## Core Services
@@ -19,7 +19,7 @@
 ### 1. Monthly Bookkeeping
 - **Details**: Full-service bookkeeping for small businesses. Includes transaction categorization, bank/credit card account reconciliations, and clean financial reports.
 - **Deliverables**: Profit & Loss (P&L) statements, Balance Sheet reporting, and monthly reconciliations.
-- **Starting Price**: $200/month (varies based on volume and complexity).
+- **Starting Price**: $350/month (varies based on volume and complexity).
 
 ### 2. QuickBooks Setup & Cleanup
 - **Details**: Setting up QuickBooks files from scratch or correcting years of errors.
@@ -75,7 +75,7 @@ We support a variety of industries in Orlando, including:
 A Level 2 ProAdvisor has advanced certifications from Intuit. We specialize in complex cleanups, custom reporting, integrations, payroll setup, and advanced system optimization.
 
 ### How much does bookkeeping cost?
-Monthly bookkeeping starts at $200/month. Tax preparation starts at $90. Cleanup projects are quoted individually after a free bookkeeping review.
+Monthly bookkeeping starts at $350/month. Tax preparation starts at $90. Cleanup projects are quoted individually after a free bookkeeping review.
 
 ### Do you help with multi-year QuickBooks cleanup?
 Yes. We perform complete reconstructions of messy QuickBooks files, reconciling historical data to ensure tax readiness and financial accuracy.

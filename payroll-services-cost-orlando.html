@@ -149,7 +149,7 @@
           "name": "How much does a payroll service cost in Orlando, FL?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Published 2026 guides put full-service payroll software at $40 to $180 per month base plus $4 to $12 per employee, and outsourced payroll for a ten-employee business at roughly $100 to $300 per month. Shea payroll starts at $100 per month, quoted before work starts."
+            "text": "Published 2026 guides put full-service payroll software at $40 to $180 per month base plus $4 to $12 per employee, and outsourced payroll for a ten-employee business at roughly $100 to $300 per month (per the Fit Small Business and Homebase 2026 guides). Shea payroll starts at $100 per month, quoted before work starts."
           }
         },
         {
@@ -165,7 +165,7 @@
           "name": "Is it cheaper to run payroll myself in Orlando?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Basic software runs $17 to $50 per month plus about $4 to $6.50 per employee, so the sticker is lower. The catch is that you run every payroll and own every filing yourself. Late or wrong payroll tax deposits draw penalties, and unpaid withheld taxes can become the owner's personal liability."
+            "text": "Basic software runs $17 to $50 per month plus about $4 to $6.50 per employee (per the Fit Small Business and Homebase 2026 guides), so the sticker is lower. The catch is that you run every payroll and own every filing yourself. Late or wrong payroll tax deposits draw penalties, and unpaid withheld taxes can become the owner's personal liability."
           }
         },
         {
@@ -490,7 +490,7 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
     <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:linear-gradient(160deg,var(--charcoal-light) 0%,var(--charcoal-mid) 100%);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
-        <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando clients say</h2>
+        <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando clients say</h2><p class="sbs-rv-sel" style="margin:-1.4rem 0 1.6rem;text-align:center;color:var(--text-muted);font-size:.9rem">A selection of 3 client reviews, quoted word for word.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem">
           <blockquote style="background:var(--charcoal);border:1px solid rgba(201,168,76,.18);border-left:3px solid var(--gold);border-radius:10px;padding:1.5rem;margin:0">
             <span aria-hidden="true" style="color:var(--gold);letter-spacing:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -539,32 +539,27 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
                 <select id="bvp-tier">
                     <option value="basic">Basic payroll software, you run each pay run</option>
                     <option value="full" selected>Full-service software, taxes filed for you</option>
-                    <option value="out">Outsourced, a payroll specialist runs it</option>
-                </select>
-                <label for="bvp-freq">How often do you pay?</label>
-                <select id="bvp-freq">
-                    <option value="1">Monthly</option>
-                    <option value="1.1" selected>Biweekly or semimonthly</option>
-                    <option value="1.25">Weekly</option>
+                    <option value="out">Outsourced, a person runs it for you</option>
                 </select>
                 <button type="button" id="bvp-go">Estimate the Range</button>
                 <div class="bvcalc-out" id="bvp-out" role="status"></div>
                 <p class="bvcalc-disclaimer" style="margin:.4rem 0 0;font-size:.85rem;color:var(--text-muted)">Estimate, not a quote.</p>
-                <p class="bvcalc-note">Ranges assembled from 2026 payroll pricing guides published by Fit Small Business and Homebase (sources cited below). Clearly an estimate: your payroll is quoted individually. Shea payroll starts at $100 per month, set after a free review.</p>
+                <p class="bvcalc-note">The ranges are the base and per-employee fees in the table below, from the <a href="https://fitsmallbusiness.com/payroll-services-cost/" rel="noopener" target="_blank">Fit Small Business</a> and <a href="https://www.joinhomebase.com/blog/payroll-cost" rel="noopener" target="_blank">Homebase</a> 2026 guides. Clearly an estimate: your payroll is quoted individually. Shea payroll starts at $100 per month, set after a free review.</p>
             </div>
             <script>
             (function(){
-                var T={basic:[[17,50],[4,6.5]],full:[[40,180],[4,12]],out:[[50,150],[6,12]]};
+                var T={basic:[[17,50],[4,6.5]],full:[[40,180],[4,12]]};
                 var b=document.getElementById('bvp-go');
                 if(!b)return;
                 b.addEventListener('click',function(){
                     var e=parseFloat(document.getElementById('bvp-emp').value);
-                    var t=T[document.getElementById('bvp-tier').value];
-                    var f=parseFloat(document.getElementById('bvp-freq').value);
-                    var lo=Math.round((t[0][0]+t[1][0]*e)*f/5)*5, hi=Math.round((t[0][1]+t[1][1]*e)*f/5)*5;
+                    var k=document.getElementById('bvp-tier').value;
                     var o=document.getElementById('bvp-out');
                     o.style.display='block';
-                    o.innerHTML='Estimated industry range: <strong>$'+lo.toLocaleString()+' to $'+hi.toLocaleString()+' per month</strong><br><span style="font-size:.85rem;color:var(--text-muted)">Published-average estimate only, not a Shea Business Solutions quote. Setup fees and year-end forms are usually billed on top.</span>';
+                    var note='<br><span style="font-size:.85rem;color:var(--text-muted)">Published 2026 ranges from the guides cited below, not a Shea Business Solutions quote. Setup fees, year-end forms and per-run fees are usually billed on top.</span>';
+                    if(k==='out'){o.innerHTML='Published example for outsourced payroll: <strong>about $100 to $300 per month</strong> for a ten-employee business'+note;return;}
+                    var t=T[k], lo=Math.round(t[0][0]+t[1][0]*e), hi=Math.round(t[0][1]+t[1][1]*e);
+                    o.innerHTML='Base fee plus per-employee fee for about '+e+' employees: <strong>$'+lo.toLocaleString()+' to $'+hi.toLocaleString()+' per month</strong>'+note;
                 });
             })();
             </script>
@@ -627,7 +622,7 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
                 <details open class="faq-item">
                     <summary>How much does a payroll service cost in Orlando, FL?</summary>
                     <div class="faq-a">
-                        <p>Published 2026 guides put full-service payroll software at $40 to $180 per month base plus $4 to $12 per employee, and outsourced payroll for a ten-employee business at roughly $100 to $300 per month. Shea payroll starts at $100 per month, quoted before work starts.</p>
+                        <p>Published 2026 guides put full-service payroll software at $40 to $180 per month base plus $4 to $12 per employee, and outsourced payroll for a ten-employee business at roughly $100 to $300 per month (per the <a href="https://fitsmallbusiness.com/payroll-services-cost/" rel="noopener" target="_blank">Fit Small Business</a> and <a href="https://www.joinhomebase.com/blog/payroll-cost" rel="noopener" target="_blank">Homebase</a> 2026 guides). Shea payroll starts at $100 per month, quoted before work starts.</p>
                     </div>
                 </details>
                 <details class="faq-item">
@@ -639,7 +634,7 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
                 <details class="faq-item">
                     <summary>Is it cheaper to run payroll myself in Orlando?</summary>
                     <div class="faq-a">
-                        <p>Basic software runs $17 to $50 per month plus about $4 to $6.50 per employee, so the sticker is lower. The catch is that you run every payroll and own every filing yourself. Late or wrong payroll tax deposits draw penalties, and unpaid withheld taxes can become the owner's personal liability.</p>
+                        <p>Basic software runs $17 to $50 per month plus about $4 to $6.50 per employee (per the <a href="https://fitsmallbusiness.com/payroll-services-cost/" rel="noopener" target="_blank">Fit Small Business</a> and <a href="https://www.joinhomebase.com/blog/payroll-cost" rel="noopener" target="_blank">Homebase</a> 2026 guides), so the sticker is lower. The catch is that you run every payroll and own every filing yourself. Late or wrong payroll tax deposits draw penalties, and unpaid withheld taxes can become the owner's personal liability.</p>
                     </div>
                 </details>
                 <details class="faq-item">

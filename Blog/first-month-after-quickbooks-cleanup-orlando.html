@@ -891,7 +891,15 @@ nav.breadcrumb a{display:inline-block;padding:10px 0;min-width:40px;}
 <style>.sbs-proof-strip{display:flex!important;align-items:center;justify-content:center;gap:.45rem;line-height:1.2;flex-wrap:wrap}.sbs-proof-strip span{display:inline!important;line-height:1.2;margin:0;padding:0;white-space:nowrap}.sbs-proof-strip:hover{background:var(--charcoal-light)}.post-hero,.blog-hero{padding-top:2.2rem!important}@media(max-width:640px){.sbs-proof-strip{font-size:.85rem}}</style>
 <meta content="noindex,nofollow" name="robots"/><style>
     .post-body-wrap figure.photo{margin:2rem 0 2.4rem}.post-body-wrap figure.photo img{display:block;width:100%;max-height:520px;object-fit:cover;border-radius:8px}.post-body-wrap figure.photo figcaption{font-size:.9rem;line-height:1.5;color:#cbc6bb;margin-top:.5rem}.post-body-wrap figure.photo figcaption span{color:#c9a84c;font-weight:700;margin-right:.4rem}.post-body-wrap .table-wrap{overflow-x:auto;margin:1.5rem 0 2rem}.post-body-wrap table{border-collapse:collapse;width:100%}.post-body-wrap th,.post-body-wrap td{border-bottom:1px solid rgba(255,255,255,.2);padding:.7rem;text-align:left;vertical-align:top}.post-body-wrap th{color:#c9a84c}
-    </style><script src="/assets/bv-attr.js" defer></script></head>
+    </style><script src="/assets/bv-attr.js" defer></script><style id="bv-qa-20261028">/* QA 2026-10-28 (Bloomview): layout only, no copy. Three-card rows (reviews, how it works, directions) stay three across from 720px instead of leaving one card alone; a lone last card or list item takes the full row; the footer's last column no longer sits alone at tablet width; the Blog grid centres a lone last card; phone side gutters on the Blog FAQ and the page-end "Last updated" line. */
+@media (min-width:720px){[style*="minmax(260px,1fr)"]:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (min-width:588px) and (max-width:719px){[style*="minmax(260px,1fr)"]>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}}
+.article-body [style*="minmax(260px,1fr)"]:not(:has(>:nth-child(3):last-child))>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}
+.article-body ul>li:last-child:nth-child(odd):not(:first-child),.rvw-grid>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}
+@media (min-width:481px) and (max-width:1263px){.footer-inner>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}}
+@media (min-width:901px){.blog-grid>.blog-card:last-child:nth-child(3n+1){grid-column:2}}
+@media (min-width:769px) and (max-width:900px){.blog-grid>.blog-card:last-child:nth-child(odd):not(:first-child){grid-column:1/-1;justify-self:center;width:calc(50% - 1rem)}}
+@media (max-width:600px){.sbsfaq{padding-left:20px;padding-right:20px}main>p.fu-force{padding-left:20px;padding-right:20px}}</style></head>
 <body>
 <!-- NAV -->
 <nav id="mainNav">

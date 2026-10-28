@@ -371,7 +371,15 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
 <script src="/assets/bv-attr.js" defer></script>
 <style id="ui-pr-20261005">.sbs-about-fig{margin:0;display:block}.sbs-about-fig picture{display:block}.sbs-about-fig figcaption{font-size:.85rem;line-height:1.4;color:var(--text-muted);text-align:center;margin:.6rem 0 0}@media(max-width:768px){.sbs-about-inner>.sbs-about-fig{order:2}}.sbs-reviews-band+.article-wrapper,.sbs-trust-band+.post-body-wrap{border-top:1px solid rgba(201,168,76,.18);padding-top:5.5rem}.article-wrapper+.sbs-town-map,.tax-crosslink+.post-cta{padding-top:5.5rem}@media(max-width:768px){.sbs-reviews-band+.article-wrapper,.sbs-trust-band+.post-body-wrap,.article-wrapper+.sbs-town-map,.tax-crosslink+.post-cta{padding-top:4rem}}.post-meta-item{display:flex;align-items:center;gap:0.4rem}.post-meta .post-meta-item{border:1px solid rgba(201,168,76,.35);background:rgba(201,168,76,.08);border-radius:999px;padding:.35rem .8rem;color:var(--text-light);line-height:1.2}.post-meta .post-meta-divider{display:none}@media(max-width:600px){.post-meta{flex-direction:row;flex-wrap:wrap;justify-content:center;gap:.5rem}}</style>
 <style id="bv-band-boundary-2026-10-16">.sbs-reviews-band+.post-body-wrap{border-top:1px solid rgba(201,168,76,.18);padding-top:5.5rem}</style>
-</head>
+<style id="bv-qa-20261028">/* QA 2026-10-28 (Bloomview): layout only, no copy. Three-card rows (reviews, how it works, directions) stay three across from 720px instead of leaving one card alone; a lone last card or list item takes the full row; the footer's last column no longer sits alone at tablet width; the Blog grid centres a lone last card; phone side gutters on the Blog FAQ and the page-end "Last updated" line. */
+@media (min-width:720px){[style*="minmax(260px,1fr)"]:has(>:nth-child(3):last-child){grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media (min-width:588px) and (max-width:719px){[style*="minmax(260px,1fr)"]>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}}
+.article-body [style*="minmax(260px,1fr)"]:not(:has(>:nth-child(3):last-child))>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}
+.article-body ul>li:last-child:nth-child(odd):not(:first-child),.rvw-grid>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}
+@media (min-width:481px) and (max-width:1263px){.footer-inner>:last-child:nth-child(odd):not(:first-child){grid-column:1/-1}}
+@media (min-width:901px){.blog-grid>.blog-card:last-child:nth-child(3n+1){grid-column:2}}
+@media (min-width:769px) and (max-width:900px){.blog-grid>.blog-card:last-child:nth-child(odd):not(:first-child){grid-column:1/-1;justify-self:center;width:calc(50% - 1rem)}}
+@media (max-width:600px){.sbsfaq{padding-left:20px;padding-right:20px}main>p.fu-force{padding-left:20px;padding-right:20px}}</style></head>
 
 <body>
 

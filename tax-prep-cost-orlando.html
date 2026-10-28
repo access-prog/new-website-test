@@ -475,6 +475,19 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
             </div>
         </div>
     </section>
+    <!-- Bloomview entity block, moved under the hero (checklist row 352) -->
+    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
+      <h2 style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</h2>
+      <ul class="check-list">
+      <li>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</li>
+      <li>The firm provides tax preparation for small businesses, along with monthly bookkeeping and payroll.</li>
+      <li>It works from ZIP 32824 and serves Orlando plus nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</li>
+      <li>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</li>
+      <li>Shea Business Solutions Bookkeeping &amp; Tax holds a 5.0 Google rating and answers every call, text, and email the same business day.</li>
+      <li>Shea Business Solutions Bookkeeping &amp; Tax offers payment plans.</li>
+      </ul>
+    </section>
+
     <!-- Bloomview visual-rhythm: trust band (additive) -->
     <section data-section="trust" class="sbs-trust-band fade-up" aria-label="Credentials and service standards">
       <div class="sbs-trust-inner">
@@ -490,7 +503,7 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
     <section data-section="reviews" class="sbs-reviews-band fade-up" aria-label="Client reviews" style="background:linear-gradient(160deg,var(--charcoal-light) 0%,var(--charcoal-mid) 100%);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem;text-align:center">5.0 on Google</p>
-        <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando clients say</h2>
+        <h2 style="color:var(--off-white);margin:0 0 2rem;text-align:center">What Orlando clients say</h2><p class="sbs-rv-sel" style="margin:-1.4rem 0 1.6rem;text-align:center;color:var(--text-muted);font-size:.9rem">A selection of 3 client reviews, quoted word for word.</p>
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.25rem">
           <blockquote style="background:var(--charcoal);border:1px solid rgba(201,168,76,.18);border-left:3px solid var(--gold);border-radius:10px;padding:1.5rem;margin:0">
             <span aria-hidden="true" style="color:var(--gold);letter-spacing:2px">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
@@ -531,7 +544,8 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
                 <p style="color:var(--text-muted);font-size:.9rem;margin:.3rem 0 0;">Ballpark from published industry fee data. An estimate, not a quote.</p>
                 <label for="bvc-type">Return type</label>
                 <select id="bvc-type">
-                    <option value="i1040">Individual (Form 1040)</option>
+                    <option value="i1040">Individual (Form 1040), not itemized</option>
+                    <option value="i1040i">Individual (Form 1040), itemized</option>
                     <option value="soleprop" selected>Sole proprietor (1040 + Schedule C)</option>
                     <option value="scorp">S-Corp (Form 1120-S)</option>
                     <option value="pship">Partnership / multi-member LLC (Form 1065)</option>
@@ -539,33 +553,26 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
                 </select>
                 <label for="bvc-books">Where do the books stand?</label>
                 <select id="bvc-books">
-                    <option value="1" selected>Reconciled and current</option>
-                    <option value="1.2">A few months behind</option>
-                    <option value="1.45">A year or more behind, or messy</option>
+                    <option value="0" selected>Reconciled and current</option>
+                    <option value="1">A few months behind</option>
+                    <option value="2">A year or more behind, or messy</option>
                 </select>
-                <label for="bvc-rev">Annual revenue</label>
-                <select id="bvc-rev">
-                    <option value="0.9">Under $100k</option>
-                    <option value="1" selected>$100k to $500k</option>
-                    <option value="1.35">Over $500k</option>
-                </select>
-                <button type="button" id="bvc-go">Estimate the Range</button>
+                <button type="button" id="bvc-go">Show the Range</button>
                 <div class="bvcalc-out" id="bvc-out" role="status"></div>
                 <p class="bvcalc-disclaimer" style="margin:.4rem 0 0;font-size:.85rem;color:var(--text-muted)">Estimate, not a quote.</p>
-                <p class="bvcalc-note">Ranges assembled from the National Society of Accountants fee survey and 2026 fee guides published by tax firms (sources cited below). Clearly an estimate: your return is quoted individually. Shea tax prep starts at $90 per return, set after a free review.</p>
+                <p class="bvcalc-note">The ranges are the 2026 firm-quoted ranges in the table below, from the <a href="https://www.sdocpa.com/business-tax-preparation-cost/" rel="noopener" target="_blank">SDO CPA</a> fee guide and the <a href="https://connect.nsacct.org/nsacctwww/knowledgecenter/income-fees-survey" rel="noopener" target="_blank">National Society of Accountants</a> survey. Clearly an estimate: your return is quoted individually. Shea tax prep starts at $90 per return, set after a free review.</p>
             </div>
             <script>
             (function(){
-                var R={i1040:[220,450],soleprop:[300,900],scorp:[650,1800],pship:[650,2000],ccorp:[800,2500]};
+                var R={i1040:[150,450],i1040i:[250,800],soleprop:[300,1500],scorp:[650,3500],pship:[650,5000],ccorp:[800,4000]};
                 var b=document.getElementById('bvc-go');
                 if(!b)return;
                 b.addEventListener('click',function(){
-                    var t=document.getElementById('bvc-type').value;
-                    var m=parseFloat(document.getElementById('bvc-books').value)*parseFloat(document.getElementById('bvc-rev').value);
-                    var lo=Math.round(R[t][0]*m/25)*25, hi=Math.round(R[t][1]*m/25)*25;
+                    var r=R[document.getElementById('bvc-type').value];
+                    var k=document.getElementById('bvc-books').value;
                     var o=document.getElementById('bvc-out');
                     o.style.display='block';
-                    o.innerHTML='Estimated industry range: <strong>$'+lo.toLocaleString()+' to $'+hi.toLocaleString()+'</strong><br><span style="font-size:.85rem;color:var(--text-muted)">Estimate, not a quote &mdash; a published-average range, not a Shea Business Solutions price. Books a year or more behind usually mean a separately quoted cleanup first.</span>';
+                    o.innerHTML='2026 firm-quoted range for this return: <strong>$'+r[0].toLocaleString()+' to $'+r[1].toLocaleString()+'</strong> (table and sources below)<br><span style="font-size:.85rem;color:var(--text-muted)">Estimate, not a quote: a published range, not a Shea Business Solutions price.'+(k==='0'?'':' The condition of the books moves the price more than anything else'+(k==='2'?', and a year or more behind usually means a separately quoted cleanup first.':'.'))+'</span>';
                 });
             })();
             </script>
@@ -691,18 +698,7 @@ footer .footer-col > a[href^="tel:"],footer .footer-col > a[href^="mailto:"],foo
     <!-- POST CTA -->
     
     <!-- Bloomview visual-rhythm: meet-the-bookkeeper photo band (additive) -->
-    <section data-section="about-business" class="sbs-entity-facts fade-up" aria-label="About Shea Business Solutions Bookkeeping &amp; Tax" style="max-width:1100px;margin:2rem auto 0;padding:1.75rem 1.5rem;background:var(--charcoal-mid);border:1px solid var(--border);border-left:3px solid var(--gold);border-radius:12px">
-      <h2 style="margin-top:0">About Shea Business Solutions Bookkeeping &amp; Tax</h2>
-      <ul class="check-list">
-      <li>Shea Business Solutions Bookkeeping &amp; Tax is an Orlando accounting firm run by Ryan Shea, a QuickBooks Level 2 Certified ProAdvisor and Certified Payroll Specialist.</li>
-      <li>The firm provides tax preparation for small businesses, along with monthly bookkeeping and payroll.</li>
-      <li>It works from ZIP 32824 and serves Orlando plus nearby Central Florida communities, among them Lake Nona, Winter Park, Celebration, and Kissimmee.</li>
-      <li>Its ProAdvisor certification comes from <a href="https://quickbooks.intuit.com/" target="_blank" rel="noopener">Intuit</a>, maker of QuickBooks, and the day-to-day work runs inside QuickBooks Online and QuickBooks Payroll.</li>
-      <li>Shea Business Solutions Bookkeeping &amp; Tax holds a 5.0 Google rating and answers every call, text, and email the same business day.</li>
-      <li>Shea Business Solutions Bookkeeping &amp; Tax offers payment plans.</li>
-      </ul>
-    </section>
-
+    
     <section data-section="how-it-works" class="sbs-hiw fade-up" aria-label="How working with Shea Business Solutions works" style="background:var(--charcoal);border-top:1px solid rgba(201,168,76,.18);padding:3.5rem 1.5rem">
       <div style="max-width:1000px;margin:0 auto">
         <p style="color:var(--gold);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin:0 0 .4rem">Our Process</p>
